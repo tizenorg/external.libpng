@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    zlib
 URL:        http://www.libpng.org/pub/png/
 Source0:    ftp://ftp.simplesystems.org/pub/png/src/libpng-%{version}.tar.bz2
+Source1001: packaging/libpng.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  zlib-devel
@@ -35,6 +36,7 @@ for developing programs using the PNG (Portable Network Graphics) library.
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static
 make %{?jobs:-j%jobs}
@@ -48,9 +50,11 @@ rm -rf $RPM_BUILD_ROOT/usr/share/man
 %postun -p /sbin/ldconfig
 
 %files
+%manifest libpng.manifest
 %{_libdir}/libpng*.so.*
 
 %files devel
+%manifest libpng.manifest
 %{_bindir}/*
 %{_includedir}/*
 %{_libdir}/libpng*.so
