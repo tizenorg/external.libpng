@@ -11,6 +11,7 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  zlib-devel
 
+
 %description
 The libpng package contains a library of functions for creating and
 manipulating PNG (Portable Network Graphics) image format files.  PNG
