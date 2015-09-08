@@ -1,8 +1,8 @@
 #sbs-git:slp/unmodified/libpng libpng 1.2.46 fcaa793c53a17a30625312c0e4e6de51383f2deb
 Name:       libpng
 Summary:    A library of functions for manipulating PNG image format files
-Version: 1.2.46
-Release:    1
+Version:    1.2.50
+Release:    2
 Group:      System/Libraries
 License:    zlib
 URL:        http://www.libpng.org/pub/png/
@@ -42,6 +42,7 @@ for developing programs using the PNG (Portable Network Graphics) library.
 
 %build
 
+export CFLAGS+=" -fvisibility=hidden"
 %configure --disable-static
 make %{?jobs:-j%jobs}
 
@@ -49,11 +50,15 @@ make %{?jobs:-j%jobs}
 rm -rf %{buildroot}
 %make_install 
 rm -rf $RPM_BUILD_ROOT/usr/share/man
+mkdir -p %{buildroot}/usr/share/license
+cp LICENSE %{buildroot}/usr/share/license/%{name}
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
+/usr/share/license/%{name}
+%manifest libpng.manifest
 %{_libdir}/libpng*.so.*
 
 %files devel

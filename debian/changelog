@@ -1,3 +1,35 @@
+libpng (1.2.50-1) unstable; urgency=low
+
+  * Upgrade libpng 1.2.50
+  * Git : external/libpng
+  * Tag : libpng_1.2.50-1
+
+ -- YoungHun Kim <yh8004.kim@samsung.com>  Tue, 06 Nov 2012 01:11:21 +0900
+
+libpng (1.2.47-3) unstable; urgency=low
+
+  * Revise license file
+  * Git : external/libpng
+  * Tag : libpng_1.2.47-3
+
+ -- YoungHun Kim <yh8004.kim@samsung.com>  Fri, 12 Oct 2012 20:20:42 +0900
+
+libpng (1.2.47-2) unstable; urgency=low
+
+  * License file copied to /usr/share/license/
+  * Git : external/libpng
+  * Tag : libpng_1.2.47-2
+
+ -- YoungHun Kim <yh8004.kim@samsung.com>  Fri, 12 Oct 2012 16:28:34 +0900
+
+libpng (1.2.47-1) unstable; urgency=low
+
+  * Add manifest file
+  * Git : external/libpng
+  * Tag : libpng_1.2.47-1
+
+ -- YoungHun Kim <yh8004.kim@samsung.com>  Thu, 20 Sep 2012 21:34:56 +0900
+
 libpng (1.2.46-2slp2+s2) unstable; urgency=low
 
   * Install correct documentation
